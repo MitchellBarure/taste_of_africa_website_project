@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Five African dishes from three regions, each with its story, step-by-step instructions and a video to cook along with.">
+  <title>Taste of Africa | Recipes</title>
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        <span>Taste of Africa</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html" aria-current="page">Recipes</a></li>
+        <li><a href="index.html#regions">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-band" aria-labelledby="page-title">
+      <h1 id="page-title">Recipes</h1>
+      <p>Five dishes from three regions, each with the story behind it, step-by-step instructions and a video to cook along with.</p>
+      <div class="checker-strip" aria-hidden="true"></div>
+    </section>
+
+    <section class="recipes">
+      <div class="filter">
+        <p id="filter-label">Filter by region:</p>
+        <div role="group" aria-labelledby="filter-label">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="southern-africa" aria-pressed="false">Southern<span class="long-label"> Africa</span></button>
+          <button type="button" data-filter="west-africa" aria-pressed="false">West<span class="long-label"> Africa</span></button>
+          <button type="button" data-filter="east-africa" aria-pressed="false">East<span class="long-label"> Africa</span></button>
+        </div>
+      </div>
+
+      <ul class="recipe-grid">
+        <li data-region="southern-africa">
+          <article class="recipe-card">
+            <figure>
+              <img src="images/dishes/chisanyama.jpg" alt="Meat on a braai grill">
+              <figcaption>
+                <span class="tag tag-southern">Southern Africa &middot; South Africa</span>
+                <h2>Chisanyama / Braai</h2>
+                <p>Fire-grilled meat shared outdoors, with <mark>pap</mark> and chakalaka.</p>
+                <div class="card-actions">
+                  <a href="recipes/chisanyama.html">View recipe</a>
+                  <button class="favorite-button" type="button" data-recipe="chisanyama" aria-pressed="false" aria-label="Favorite Chisanyama">&#10084; Favorite</button>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+        </li>
+
+        <li data-region="southern-africa">
+          <article class="recipe-card">
+            <figure>
+              <img src="images/dishes/splathlo.jpg" alt="A stacked splathlo, cut open">
+              <figcaption>
+                <span class="tag tag-southern">Southern Africa &middot; South Africa</span>
+                <h2>Splathlo (Kota)</h2>
+                <p>A hollowed quarter loaf stacked with chips, <mark>polony</mark>, cheese and atchar.</p>
+                <div class="card-actions">
+                  <a href="recipes/splathlo.html">View recipe</a>
+                  <button class="favorite-button" type="button" data-recipe="splathlo" aria-pressed="false" aria-label="Favorite Splathlo">&#10084; Favorite</button>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+        </li>
+
+        <li data-region="west-africa">
+          <article class="recipe-card">
+            <figure>
+              <img src="images/dishes/jollof-rice.jpg" alt="Jollof rice in a pot">
+              <figcaption>
+                <span class="tag tag-west">West Africa &middot; Nigeria, Ghana</span>
+                <h2>Jollof rice</h2>
+                <p>Rice cooked in a <mark>tomato and pepper</mark> base until smoky at the bottom.</p>
+                <div class="card-actions">
+                  <a href="recipes/jollof-rice.html">View recipe</a>
+                  <button class="favorite-button" type="button" data-recipe="jollof-rice" aria-pressed="false" aria-label="Favorite Jollof rice">&#10084; Favorite</button>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+        </li>
+
+        <li data-region="west-africa">
+          <article class="recipe-card">
+            <figure>
+              <img src="images/dishes/groundnut-soup.jpg" alt="A bowl of groundnut soup">
+              <figcaption>
+                <span class="tag tag-west">West Africa &middot; Ghana</span>
+                <h2>Groundnut soup</h2>
+                <p>A rich soup built on <mark>roasted peanut</mark> paste, eaten with fufu or rice balls.</p>
+                <div class="card-actions">
+                  <a href="recipes/groundnut-soup.html">View recipe</a>
+                  <button class="favorite-button" type="button" data-recipe="groundnut-soup" aria-pressed="false" aria-label="Favorite Groundnut soup">&#10084; Favorite</button>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+        </li>
+
+        <li data-region="east-africa">
+          <article class="recipe-card">
+            <figure>
+              <img src="images/dishes/isombe.jpg" alt="Isombe in a clay dish">
+              <figcaption>
+                <span class="tag tag-east">East Africa &middot; Rwanda</span>
+                <h2>Isombe</h2>
+                <p>Pounded <mark>cassava leaves</mark>, slow-cooked with aubergine and peanut paste.</p>
+                <div class="card-actions">
+                  <a href="recipes/isombe.html">View recipe</a>
+                  <button class="favorite-button" type="button" data-recipe="isombe" aria-pressed="false" aria-label="Favorite Isombe">&#10084; Favorite</button>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="checker-strip" aria-hidden="true"></div>
+
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        <span>Taste of Africa</span>
+      </a>
+      <p class="tagline">Africa's kitchens, one recipe at a time.</p>
+      <p>Recipes, regions and the stories behind the food, shared to keep African food heritage alive and on the table.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="recipes.html">All recipes</a></li>
+          <li><a href="index.html#featured">Featured dishes</a></li>
+          <li><a href="index.html#regions">Region map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Regions</h2>
+        <ul>
+          <li><a href="regions/southern-africa.html">Southern Africa</a></li>
+          <li><a href="regions/west-africa.html">West Africa</a></li>
+          <li><a href="regions/east-africa.html">East Africa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Taste of Africa</h2>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <form class="newsletter" action="#" method="post">
+      <div>
+        <h2>Hungry for more?</h2>
+        <p>Get new recipes and food stories in your inbox.</p>
+      </div>
+      <label for="newsletter-email">Email address</label>
+      <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+      <button type="submit">Sign me up</button>
+    </form>
+
+    <p class="copyright">&copy; 2026 Taste of Africa</p>
+  </footer>
+</body>
+</html>
