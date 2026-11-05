@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recipes, regions and the stories behind African food, shared to keep African food heritage alive.">
+  <title>Taste of Africa | Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        <span>Taste of Africa</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="#regions">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Taste the whole continent</h1>
+        <p>Recipes, stories and the cooks behind them. From a <mark>Saturday braai</mark> in Soweto to a pot of jollof in Lagos, this is African food heritage, served fresh.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="recipes.html">Explore recipes</a>
+          <a class="btn btn-secondary" href="#regions">Find your region</a>
+        </div>
+      </div>
+
+      <figure class="hero-video">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="Introduction to African food culture video"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+        <figcaption>Watch: why food is how many African families tell their stories.</figcaption>
+      </figure>
+    </section>
+
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Cook this week</p>
+          <h2 id="featured-title">Featured dishes</h2>
+        </div>
+        <div class="carousel-controls">
+          <p class="carousel-counter" aria-live="polite">1 / 4</p>
+          <button class="carousel-prev" type="button" aria-label="Previous dish">&larr;</button>
+          <button class="carousel-next" type="button" aria-label="Next dish">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="carousel">
+        <figure class="slide is-active">
+          <img src="images/dishes/chisanyama.jpg" alt="Grilled meat on a braai grill">
+          <figcaption>
+            <span class="tag tag-southern">Southern Africa</span>
+            <h3>Chisanyama</h3>
+            <p>Fire-grilled meat shared outdoors, served with <mark>pap</mark> and chakalaka.</p>
+            <a class="btn btn-primary" href="recipes/chisanyama.html">Cook Chisanyama</a>
+          </figcaption>
+        </figure>
+
+        <figure class="slide">
+          <img src="images/dishes/jollof-rice.jpg" alt="A pot of red jollof rice">
+          <figcaption>
+            <span class="tag tag-west">West Africa</span>
+            <h3>Jollof rice</h3>
+            <p>Rice cooked slowly in a <mark>smoky tomato base</mark> with peppers and onion.</p>
+            <a class="btn btn-primary" href="recipes/jollof-rice.html">Cook Jollof rice</a>
+          </figcaption>
+        </figure>
+
+        <figure class="slide">
+          <img src="images/dishes/groundnut-soup.jpg" alt="A bowl of orange groundnut soup">
+          <figcaption>
+            <span class="tag tag-west">West Africa</span>
+            <h3>Groundnut soup</h3>
+            <p>A rich soup of <mark>ground peanuts</mark>, tomato and chilli, eaten with rice balls or fufu.</p>
+            <a class="btn btn-primary" href="recipes/groundnut-soup.html">Cook Groundnut soup</a>
+          </figcaption>
+        </figure>
+
+        <figure class="slide">
+          <img src="images/dishes/isombe.jpg" alt="A dish of dark green isombe">
+          <figcaption>
+            <span class="tag tag-east">East Africa</span>
+            <h3>Isombe</h3>
+            <p>Pounded <mark>cassava leaves</mark> stewed with aubergine, spinach and peanut.</p>
+            <a class="btn btn-primary" href="recipes/isombe.html">Cook Isombe</a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="carousel-dots">
+        <button type="button" aria-label="Show dish 1" aria-current="true"></button>
+        <button type="button" aria-label="Show dish 2"></button>
+        <button type="button" aria-label="Show dish 3"></button>
+        <button type="button" aria-label="Show dish 4"></button>
+      </div>
+    </section>
+
+    <section class="regions" id="regions" aria-labelledby="regions-title">
+      <svg class="region-map" viewBox="0 0 400 440" aria-labelledby="map-title">
+        <title id="map-title">Map of Africa's culinary regions</title>
+
+        <g class="region region-soon">
+          <title>North Africa, coming soon</title>
+          <path d="M60 150 L70 95 L110 55 L180 40 L260 45 L310 60 L330 110 L340 150 Z"/>
+          <text x="200" y="105">North &middot; soon</text>
+        </g>
+
+        <a class="region region-west" href="regions/west-africa.html" aria-label="West Africa">
+          <title>West Africa</title>
+          <path d="M60 150 L180 150 L180 250 L150 230 L100 215 L60 190 Z"/>
+          <text x="120" y="185">West</text>
+        </a>
+
+        <g class="region region-soon">
+          <title>Central Africa, coming soon</title>
+          <path d="M180 150 L250 150 L250 300 L190 300 L180 250 Z"/>
+          <text x="215" y="215">Central</text>
+          <text x="215" y="235">soon</text>
+        </g>
+
+        <a class="region region-east" href="regions/east-africa.html" aria-label="East Africa">
+          <title>East Africa</title>
+          <path d="M250 150 L340 150 L360 190 L390 200 L360 260 L320 300 L250 300 Z"/>
+          <text x="300" y="215">East</text>
+        </a>
+
+        <a class="region region-southern" href="regions/southern-africa.html" aria-label="Southern Africa">
+          <title>Southern Africa</title>
+          <path d="M190 300 L320 300 L300 360 L260 410 L220 415 L200 370 Z"/>
+          <text x="255" y="350">Southern</text>
+        </a>
+      </svg>
+
+      <div class="regions-text">
+        <p class="eyebrow">Pick a place on the map</p>
+        <h2 id="regions-title">Explore by region</h2>
+        <p>Every region cooks differently. Hover over the map, or pick a region below, to see its staples, spices and signature dishes.</p>
+
+        <ul class="region-cards">
+          <li>
+            <a class="region-card region-card-southern" href="regions/southern-africa.html">
+              <h3>Southern Africa</h3>
+              <p>Chisanyama, Splathlo</p>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a class="region-card region-card-west" href="regions/west-africa.html">
+              <h3>West Africa</h3>
+              <p>Jollof rice, Groundnut soup</p>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a class="region-card region-card-east" href="regions/east-africa.html">
+              <h3>East Africa</h3>
+              <p>Isombe</p>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        </ul>
+
+        <p>North and Central Africa are coming soon.</p>
+      </div>
+    </section>
+
+    <section class="trends" aria-labelledby="trends-title">
+      <h2 id="trends-title">Latest food trends</h2>
+
+      <div class="trend-list">
+        <article class="trend-card">
+          <img src="images/trends/fonio.jpg" alt="A bowl of fonio grain">
+          <p class="trend-meta"><span>Ingredients</span> &middot; [Date]</p>
+          <h3>Ancient grains are back on the plate</h3>
+          <p>Cooks are swapping rice for <mark>fonio</mark> and millet. [Two-line summary from your source.]</p>
+          <a href="#">Read more</a>
+        </article>
+
+        <article class="trend-card">
+          <img src="images/trends/suya.jpg" alt="Suya skewers on a grill">
+          <p class="trend-meta"><span>Spices</span> &middot; [Date]</p>
+          <h3>Suya spice goes beyond the grill</h3>
+          <p><mark>Yaji</mark> spice blend is turning up on fries, popcorn and roast veg. [Two-line summary from your source.]</p>
+          <a href="#">Read more</a>
+        </article>
+
+        <article class="trend-card">
+          <img src="images/trends/young-chef.jpg" alt="A young chef plating a stew">
+          <p class="trend-meta"><span>Culture</span> &middot; [Date]</p>
+          <h3>Young chefs remix grandma's recipes</h3>
+          <p>New takes on classics keep the <mark>slow-cooking</mark> at the heart. [Two-line summary from your source.]</p>
+          <a href="#">Read more</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="checker-strip" aria-hidden="true"></div>
+
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        <span>Taste of Africa</span>
+      </a>
+      <p class="tagline">Africa's kitchens, one recipe at a time.</p>
+      <p>Recipes, regions and the stories behind the food, shared to keep African food heritage alive and on the table.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="recipes.html">All recipes</a></li>
+          <li><a href="#featured">Featured dishes</a></li>
+          <li><a href="#regions">Region map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Regions</h2>
+        <ul>
+          <li><a href="regions/southern-africa.html">Southern Africa</a></li>
+          <li><a href="regions/west-africa.html">West Africa</a></li>
+          <li><a href="regions/east-africa.html">East Africa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Taste of Africa</h2>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <form class="newsletter" action="#" method="post">
+      <div>
+        <h2>Hungry for more?</h2>
+        <p>Get new recipes and food stories in your inbox.</p>
+      </div>
+      <label for="newsletter-email">Email address</label>
+      <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+      <button type="submit">Sign me up</button>
+    </form>
+
+    <p class="copyright">&copy; 2026 Taste of Africa</p>
+  </footer>
+</body>
+</html>
