@@ -65,18 +65,24 @@
         <p>The dish is widely linked to the Wolof (Jolof) people of the Senegambia region. Today it is party food across West Africa, built on a blended base of <mark>tomatoes, red peppers and scotch bonnet</mark>. Many cooks swear the best part is the <mark>smoky bottom layer</mark> of the pot.</p>
       </section>
 
-      <section class="ingredients" aria-labelledby="ingredients-title">
+      <section class="ingredients" aria-labelledby="ingredients-title" data-servings="6">
         <h2 id="ingredients-title">Ingredients</h2>
+        <div class="servings">
+          <label for="servings">Servings</label>
+          <button class="servings-less" type="button" aria-label="Fewer servings">&minus;</button>
+          <output class="servings-count" id="servings" aria-live="polite">6</output>
+          <button class="servings-more" type="button" aria-label="More servings">+</button>
+        </div>
         <ul>
-          <li>3 cups long-grain parboiled rice</li>
-          <li>4 ripe plum tomatoes</li>
-          <li>2 red bell peppers</li>
-          <li>1 scotch bonnet pepper</li>
-          <li>2 onions</li>
-          <li>3 tbsp tomato paste</li>
-          <li>3 cups chicken or vegetable stock</li>
-          <li>2 bay leaves, 1 tsp thyme, 1 tsp curry powder</li>
-          <li>&frac12; cup vegetable oil, salt to taste</li>
+          <li><span class="amount" data-amount="3">3</span> cups long-grain parboiled rice</li>
+          <li><span class="amount" data-amount="4">4</span> ripe plum tomatoes</li>
+          <li><span class="amount" data-amount="2">2</span> red bell peppers</li>
+          <li><span class="amount" data-amount="1">1</span> scotch bonnet pepper</li>
+          <li><span class="amount" data-amount="2">2</span> onions</li>
+          <li><span class="amount" data-amount="3">3</span> tbsp tomato paste</li>
+          <li><span class="amount" data-amount="3">3</span> cups chicken or vegetable stock</li>
+          <li><span class="amount" data-amount="2">2</span> bay leaves, <span class="amount" data-amount="1">1</span> tsp thyme, <span class="amount" data-amount="1">1</span> tsp curry powder</li>
+          <li><span class="amount" data-amount="0.5">&frac12;</span> cup vegetable oil, salt to taste</li>
         </ul>
       </section>
 

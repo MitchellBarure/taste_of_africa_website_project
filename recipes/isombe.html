@@ -65,16 +65,22 @@
         <p>Isombe is a popular stew in Rwanda and is also eaten in Burundi. It is believed to have started in the Democratic Republic of the Congo. The base is <mark>cassava leaves</mark>, grown across Rwanda, cooked with tomatoes, onion and garlic, then finished with <mark>peanut butter</mark> for richness. It is eaten with ugali, rice and beans, or bread.</p>
       </section>
 
-      <section class="ingredients" aria-labelledby="ingredients-title">
+      <section class="ingredients" aria-labelledby="ingredients-title" data-servings="4">
         <h2 id="ingredients-title">Ingredients</h2>
+        <div class="servings">
+          <label for="servings">Servings</label>
+          <button class="servings-less" type="button" aria-label="Fewer servings">&minus;</button>
+          <output class="servings-count" id="servings" aria-live="polite">4</output>
+          <button class="servings-more" type="button" aria-label="More servings">+</button>
+        </div>
         <ul>
-          <li>1 kg cassava leaves, fresh or frozen</li>
-          <li>2 tomatoes, chopped</li>
-          <li>1 onion, chopped</li>
-          <li>3 cloves garlic, crushed</li>
-          <li>1 handful coriander, chopped</li>
-          <li>2 cups stock made from meat bones</li>
-          <li>4 tbsp peanut butter</li>
+          <li><span class="amount" data-amount="1">1</span> kg cassava leaves, fresh or frozen</li>
+          <li><span class="amount" data-amount="2">2</span> tomatoes, chopped</li>
+          <li><span class="amount" data-amount="1">1</span> onion, chopped</li>
+          <li><span class="amount" data-amount="3">3</span> cloves garlic, crushed</li>
+          <li><span class="amount" data-amount="1">1</span> handful coriander, chopped</li>
+          <li><span class="amount" data-amount="2">2</span> cups stock made from meat bones</li>
+          <li><span class="amount" data-amount="4">4</span> tbsp peanut butter</li>
           <li>Salt to taste</li>
         </ul>
       </section>

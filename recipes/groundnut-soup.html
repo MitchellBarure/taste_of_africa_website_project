@@ -65,24 +65,30 @@
         <p>Groundnut soup, also called peanut stew, comes from northern Nigeria, where it is known as <i lang="ha">miyar gyada</i>. Today it is cooked across the country and served at weddings and other big occasions. Its body comes from <mark>toasted, ground peanuts</mark>, with heat from <mark>scotch bonnet</mark> and colour from <mark>palm oil</mark>. It is eaten with rice or a swallow such as fufu or eba.</p>
       </section>
 
-      <section class="ingredients" aria-labelledby="ingredients-title">
+      <section class="ingredients" aria-labelledby="ingredients-title" data-servings="8">
         <h2 id="ingredients-title">Ingredients</h2>
+        <div class="servings">
+          <label for="servings">Servings</label>
+          <button class="servings-less" type="button" aria-label="Fewer servings">&minus;</button>
+          <output class="servings-count" id="servings" aria-live="polite">8</output>
+          <button class="servings-more" type="button" aria-label="More servings">+</button>
+        </div>
 
         <h3>For the meat</h3>
         <ul>
-          <li>2.5 lb goat meat for stewing</li>
-          <li>1 red onion, sliced</li>
-          <li>2 tsp bouillon</li>
-          <li>1 tsp salt</li>
+          <li><span class="amount" data-amount="2.5">2.5</span> lb goat meat for stewing</li>
+          <li><span class="amount" data-amount="1">1</span> red onion, sliced</li>
+          <li><span class="amount" data-amount="2">2</span> tsp bouillon</li>
+          <li><span class="amount" data-amount="1">1</span> tsp salt</li>
         </ul>
 
         <h3>For the soup</h3>
         <ul>
-          <li>2 cups raw skinned peanuts</li>
-          <li>3 scotch bonnet peppers, chopped</li>
-          <li>0.5 lb spinach, chopped</li>
-          <li>2 tbsp ground crayfish</li>
-          <li>3 tbsp palm oil</li>
+          <li><span class="amount" data-amount="2">2</span> cups raw skinned peanuts</li>
+          <li><span class="amount" data-amount="3">3</span> scotch bonnet peppers, chopped</li>
+          <li><span class="amount" data-amount="0.5">0.5</span> lb spinach, chopped</li>
+          <li><span class="amount" data-amount="2">2</span> tbsp ground crayfish</li>
+          <li><span class="amount" data-amount="3">3</span> tbsp palm oil</li>
           <li>Salt to taste</li>
         </ul>
       </section>

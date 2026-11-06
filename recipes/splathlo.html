@@ -65,19 +65,25 @@
         <p>Splathlo, also spelled spatlo or sphatlo and known as kota, was born in the townships of Gauteng, around Johannesburg and Pretoria. The name kota comes from the way "quarter" is said, because it starts with a <mark>quarter loaf</mark> of white bread. Its layers bring many food cultures together: South Asian <mark>atchar</mark>, sausages, braai flavours and hot <mark>slap chips</mark>.</p>
       </section>
 
-      <section class="ingredients" aria-labelledby="ingredients-title">
+      <section class="ingredients" aria-labelledby="ingredients-title" data-servings="1">
         <h2 id="ingredients-title">Ingredients</h2>
+        <div class="servings">
+          <label for="servings">Servings</label>
+          <button class="servings-less" type="button" aria-label="Fewer servings">&minus;</button>
+          <output class="servings-count" id="servings" aria-live="polite">1</output>
+          <button class="servings-more" type="button" aria-label="More servings">+</button>
+        </div>
         <ul>
-          <li>&frac14; loaf of white bread</li>
-          <li>2 slices polony</li>
-          <li>1 tbsp atchar</li>
-          <li>1 slice cheddar cheese</li>
-          <li>2 rashers bacon</li>
-          <li>2 tbsp tomato and onion relish</li>
-          <li>1 Russian sausage, split</li>
-          <li>3 tbsp chakalaka</li>
-          <li>1 egg</li>
-          <li>1 handful slap chips</li>
+          <li><span class="amount" data-amount="0.25">&frac14;</span> loaf of white bread</li>
+          <li><span class="amount" data-amount="2">2</span> slices polony</li>
+          <li><span class="amount" data-amount="1">1</span> tbsp atchar</li>
+          <li><span class="amount" data-amount="1">1</span> slice cheddar cheese</li>
+          <li><span class="amount" data-amount="2">2</span> rashers bacon</li>
+          <li><span class="amount" data-amount="2">2</span> tbsp tomato and onion relish</li>
+          <li><span class="amount" data-amount="1">1</span> Russian sausage, split</li>
+          <li><span class="amount" data-amount="3">3</span> tbsp chakalaka</li>
+          <li><span class="amount" data-amount="1">1</span> egg</li>
+          <li><span class="amount" data-amount="1">1</span> handful slap chips</li>
           <li>Tomato sauce and barbecue sauce</li>
         </ul>
       </section>

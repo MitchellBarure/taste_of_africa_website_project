@@ -65,23 +65,29 @@
         <p>In South Africa's townships, chisanyama (shisa nyama) is both the meal and the place: a grill where you choose your meat and have it braaied on the spot. Spots like Mzoli's in Gugulethu, Cape Town, and Chaf Pozi in Soweto bring together people from all walks of life, often on a Sunday. Expect music, <mark>fatty cuts</mark> that stay juicy over the <mark>open fire</mark>, and plates served with <mark>pap</mark> and chakalaka.</p>
       </section>
 
-      <section class="ingredients" aria-labelledby="ingredients-title">
+      <section class="ingredients" aria-labelledby="ingredients-title" data-servings="4">
         <h2 id="ingredients-title">Ingredients</h2>
+        <div class="servings">
+          <label for="servings">Servings</label>
+          <button class="servings-less" type="button" aria-label="Fewer servings">&minus;</button>
+          <output class="servings-count" id="servings" aria-live="polite">4</output>
+          <button class="servings-more" type="button" aria-label="More servings">+</button>
+        </div>
 
         <h3>Spice mix</h3>
         <ul>
-          <li>10 ml salt</li>
-          <li>2.5 ml chilli powder</li>
-          <li>2.5 ml ground cumin</li>
-          <li>5 ml black pepper</li>
-          <li>5 ml cayenne pepper</li>
-          <li>5 ml dried oregano</li>
+          <li><span class="amount" data-amount="10">10</span> ml salt</li>
+          <li><span class="amount" data-amount="2.5">2.5</span> ml chilli powder</li>
+          <li><span class="amount" data-amount="2.5">2.5</span> ml ground cumin</li>
+          <li><span class="amount" data-amount="5">5</span> ml black pepper</li>
+          <li><span class="amount" data-amount="5">5</span> ml cayenne pepper</li>
+          <li><span class="amount" data-amount="5">5</span> ml dried oregano</li>
         </ul>
 
         <h3>Braai meat</h3>
         <ul>
-          <li>4 beef chuck chops</li>
-          <li>4 lamb braai chops</li>
+          <li><span class="amount" data-amount="4">4</span> beef chuck chops</li>
+          <li><span class="amount" data-amount="4">4</span> lamb braai chops</li>
         </ul>
 
         <h3>To serve</h3>
