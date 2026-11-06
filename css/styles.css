@@ -361,12 +361,6 @@ main > section {
     font-weight: 400;
     color: var(--sunshine);
   }
-
-  .brand img {
-    padding: 0.25rem;
-    border-radius: 50%;
-    background: var(--cream);
-  }
 }
 
 .footer-brand .tagline {
