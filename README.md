@@ -112,6 +112,9 @@ Open the folder in VS Code and start it with the **Live Server** extension. The 
 | `images/regions/black-eyed-peas.avif` | Unsplash+ (premium_photo-1668447218150-75b85aa026e1) |
 | `images/regions/spiced-rice.avif` | Unsplash (photo-1634324092526-91f5e878b72f) |
 | `images/regions/cassava-leaves.avif` | Unsplash (photo-1789976993109-bd1f6dab0358) |
+| `images/regions/peri-peri.avif` | Unsplash (photo-1602237514002-c2d8ae2da393) |
+| `images/regions/palm-oil.jpg` | [Palm Oil 0](https://commons.wikimedia.org/wiki/File:Palm_Oil_0.jpg) by Amuzujoe, Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/regions/ugali.jpg` | [Ugali & Sukuma Wiki](https://commons.wikimedia.org/wiki/File:Ugali_%26_Sukuma_Wiki.jpg) by Paresh Jai, Wikimedia Commons, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 | `images/sharing-meal.jpg` | [Pexels, photo 5728174](https://www.pexels.com/photo/5728174/) by Any Lane |
 | `images/logo-icon.svg`, `logo-badge.svg`, `favicon.svg` | Designed for this project |
 
