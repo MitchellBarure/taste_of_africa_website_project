@@ -32,6 +32,7 @@ A multi-page website that celebrates African food heritage through recipes, regi
 - Mobile-first layout with breakpoints at 768px (tablet) and 1024px (desktop)
 - Shared rules for cards, top bands and form fields, so styles are not repeated
 - Native CSS nesting for hover states, child elements and media queries
+- Light and dark themes built from colour-role variables (background, surface, text, lines, accent)
 - Visible focus states for keyboard users, and a softer glow on form fields
 - Reduced motion respected for visitors who ask for it
 
@@ -42,6 +43,8 @@ A multi-page website that celebrates African food heritage through recipes, regi
 - **Recipe filter:** region buttons show or hide recipe cards using `data-region` and a `.hidden` class, without reloading the page
 - **Favourites:** the heart button saves recipes to `localStorage`, and favourites are restored when the page loads
 - **Contact form validation:** stops the default submit, checks that the message is longer than 20 characters, then hides the form and thanks the visitor by name
+- **Dark/light mode:** the moon/sun button in the nav switches themes, saves the choice in `localStorage`, and follows the device's own setting on the first visit
+- **Newsletter signup:** the footer form shows a thank-you message instead of reloading the page
 
 ## Project structure
 
@@ -131,6 +134,10 @@ Open the folder in VS Code and start it with the **Live Server** extension. The 
 | Southern Africa | [South Africa Street Food in Johannesburg!! Braai, Bread and Beef Head!!](https://www.youtube.com/watch?v=XPSLug5FlDE) by Best Ever Food Review Show |
 | West Africa | [Village Food in West Africa: Best Fufu and Extreme Hospitality in Rural Ghana](https://www.youtube.com/watch?v=GZa2B-knFGw) by Mark Wiens |
 | East Africa | [Cheapest Rural African Food Market in Kenya](https://www.youtube.com/watch?v=0CYoGRAN1Vo) by Dee's African Lifestyle |
+
+### Recipe values
+
+Ingredient amounts come from the written sources below where they gave them. Nutrition values are approximate per serving, worked out from the ingredients; the groundnut soup's calories match the Yummy Medley recipe card.
 
 ### Written sources
 
