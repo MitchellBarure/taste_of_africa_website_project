@@ -1,5 +1,6 @@
 const FAVORITES_KEY = "favoriteRecipes";
 const THEME_KEY = "theme";
+const MAX_SERVINGS = 20;
 
 // Light or dark theme: saved choice first, otherwise the device's own setting
 function setupThemeToggle() {
@@ -120,6 +121,46 @@ function setupFavorites() {
   });
 }
 
+// Shows an amount as a kitchen fraction, rounded to the nearest quarter (1.25 becomes "1¼")
+function formatAmount(value) {
+  const quarters = Math.max(1, Math.round(value * 4));
+  const whole = Math.floor(quarters / 4);
+  const fraction = ["", "¼", "½", "¾"][quarters % 4];
+  return whole === 0 ? fraction : `${whole}${fraction}`;
+}
+
+// Ingredient scaler: recalculates every amount for the chosen number of servings
+function setupIngredientScaler() {
+  const section = document.querySelector(".ingredients[data-servings]");
+  if (!section) return;
+
+  const baseServings = Number(section.dataset.servings);
+  const amounts = section.querySelectorAll(".amount");
+  const count = section.querySelector(".servings-count");
+  let servings = baseServings;
+
+  function update() {
+    count.textContent = servings;
+
+    amounts.forEach((amount) => {
+      const scaled = (Number(amount.dataset.amount) * servings) / baseServings;
+      amount.textContent = formatAmount(scaled);
+    });
+  }
+
+  section.querySelector(".servings-less").addEventListener("click", () => {
+    servings = Math.max(1, servings - 1);
+    update();
+  });
+
+  section.querySelector(".servings-more").addEventListener("click", () => {
+    servings = Math.min(MAX_SERVINGS, servings + 1);
+    update();
+  });
+
+  update();
+}
+
 // Contact form: message must be over 20 characters, then thank the visitor by name
 function setupContactForm() {
   const form = document.querySelector("#contact-form");
@@ -189,5 +230,6 @@ setupMenu();
 setupCarousel();
 setupRecipeFilter();
 setupFavorites();
+setupIngredientScaler();
 setupContactForm();
 setupNewsletter();
