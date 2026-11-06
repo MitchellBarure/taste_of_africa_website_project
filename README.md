@@ -101,6 +101,18 @@ Open the folder in VS Code and start it with the **Live Server** extension. The 
 | `images/trends/fonio.avif` | [Pexels, photo 3233284](https://www.pexels.com/photo/3233284/) |
 | `images/trends/suya.avif` | [Pexels, photo 20419328](https://www.pexels.com/photo/20419328/) |
 | `images/trends/young-chef.avif` | [Pexels, photo 14621560](https://www.pexels.com/photo/14621560/) |
+| `images/regions/southern-africa.jpg`, `west-africa.jpg` | Generated with Google Gemini |
+| `images/regions/east-africa.jpg` | [Pexels, photo 33624055](https://www.pexels.com/photo/33624055/) by barrytheoctopus |
+| `images/regions/dombolo.jpg` | [Pexels, photo 9137343](https://www.pexels.com/photo/9137343/) by Stew Photography |
+| `images/regions/boerewors.jpg` | [Pexels, photo 38525665](https://www.pexels.com/photo/38525665/) by Joel Simeon |
+| `images/regions/leafy-greens.jpg` | [Pexels, photo 36657705](https://www.pexels.com/photo/36657705/) by Maximiliana Eligi Mtenga |
+| `images/regions/cassava-yam.jpg` | [Pexels, photo 30204260](https://www.pexels.com/photo/30204260/) by Micka Randrianjafisolo |
+| `images/regions/rice.jpg` | [Pexels, photo 8108170](https://www.pexels.com/photo/8108170/) by MART PRODUCTION |
+| `images/regions/mandazi.jpg` | [Pexels, photo 34241980](https://www.pexels.com/photo/34241980/) by Anh Nguyen |
+| `images/regions/black-eyed-peas.avif` | Unsplash+ (premium_photo-1668447218150-75b85aa026e1) |
+| `images/regions/spiced-rice.avif` | Unsplash (photo-1634324092526-91f5e878b72f) |
+| `images/regions/cassava-leaves.avif` | Unsplash (photo-1789976993109-bd1f6dab0358) |
+| `images/sharing-meal.jpg` | [Pexels, photo 5728174](https://www.pexels.com/photo/5728174/) by Any Lane |
 | `images/logo-icon.svg`, `logo-badge.svg`, `favicon.svg` | Designed for this project |
 
 ### Videos
@@ -113,6 +125,9 @@ Open the folder in VS Code and start it with the **Live Server** extension. The 
 | Jollof rice | [Sweet Jollof Rice Recipe](https://www.youtube.com/watch?v=tuC4WWo60qU) by Kikifoodies |
 | Groundnut soup | [How to Make Groundnut Soup](https://www.youtube.com/watch?v=a-yXiT-gf7Q) by Velvety Foodies |
 | Isombe | [How To Cook Cassava Leaves (Sombe)](https://www.youtube.com/watch?v=LCwueWa3LsQ) by Just Libby |
+| Southern Africa | [South Africa Street Food in Johannesburg!! Braai, Bread and Beef Head!!](https://www.youtube.com/watch?v=XPSLug5FlDE) by Best Ever Food Review Show |
+| West Africa | [Village Food in West Africa: Best Fufu and Extreme Hospitality in Rural Ghana](https://www.youtube.com/watch?v=GZa2B-knFGw) by Mark Wiens |
+| East Africa | [Cheapest Rural African Food Market in Kenya](https://www.youtube.com/watch?v=0CYoGRAN1Vo) by Dee's African Lifestyle |
 
 ### Written sources
 
