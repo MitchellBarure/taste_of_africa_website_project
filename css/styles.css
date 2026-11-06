@@ -124,8 +124,13 @@ iframe {
   list-style: none;
 }
 
-figure {
+figure,
+blockquote {
   margin: 0;
+}
+
+li::marker {
+  color: var(--tomato);
 }
 
 mark {
@@ -263,7 +268,8 @@ main > * {
 .trend-card,
 .recipe-card,
 .ingredients,
-.nutrition {
+.nutrition,
+.history-list li {
   border: var(--border);
   border-radius: var(--radius-card);
   background: var(--card);
@@ -288,10 +294,16 @@ main > * {
 
 .hero,
 .page-band,
+.recipe-hero,
+.about-hero {
+  padding-top: var(--header-space);
+}
+
+.hero,
+.page-band,
 .recipe-hero {
   --focus-color: var(--sunshine);
   --mark-color: var(--sunshine);
-  padding-top: var(--header-space);
 
   h1 {
     color: var(--sunshine);
@@ -305,7 +317,12 @@ main > * {
   color: var(--white);
 }
 
-.page-band {
+.about-hero {
+  background: var(--sunshine);
+}
+
+.page-band,
+.about-hero {
   display: grid;
   gap: var(--space-m);
 
@@ -322,6 +339,19 @@ main > * {
   p {
     max-width: 32rem;
     font-size: 1.25rem;
+  }
+}
+
+/* ========== Red sections ========== */
+
+.trends,
+.history {
+  --focus-color: var(--sunshine);
+  background: var(--tomato);
+  color: var(--white);
+
+  h2 {
+    color: var(--sunshine);
   }
 }
 
@@ -881,15 +911,6 @@ main > * {
 
 /* ========== Home: latest food trends ========== */
 
-.trends {
-  --focus-color: var(--sunshine);
-  background: var(--tomato);
-
-  h2 {
-    color: var(--sunshine);
-  }
-}
-
 .trend-list {
   display: grid;
   gap: var(--space-m);
@@ -902,6 +923,7 @@ main > * {
 .trend-card {
   --focus-color: var(--ink);
   padding-bottom: var(--space-m);
+  color: var(--ink);
 
   img {
     object-position: center 15%;
@@ -1166,10 +1188,6 @@ main > * {
 
   li {
     margin-bottom: var(--space-xs);
-
-    &::marker {
-      color: var(--tomato);
-    }
   }
 }
 
@@ -1284,4 +1302,129 @@ main > * {
   @media (min-width: 768px) {
     flex-direction: row;
   }
+}
+
+/* ========== About: mission, story, history, visit ========== */
+
+.mission {
+  line-height: 1.5;
+
+  strong {
+    color: var(--chilli);
+  }
+}
+
+.why-we-started {
+  display: grid;
+  gap: var(--space-l);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  > img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: var(--border);
+    border-radius: var(--radius-image);
+  }
+
+  ul {
+    margin: var(--space-m) 0 0;
+    padding-left: 1.25rem;
+  }
+}
+
+.founder-quote {
+  margin-block: var(--space-m);
+  padding-left: var(--space-m);
+  border-left: 6px solid var(--tomato);
+
+  blockquote {
+    font-style: italic;
+  }
+
+  figcaption {
+    margin-top: var(--space-xs);
+    font-weight: 700;
+    color: var(--chilli);
+
+    &::before {
+      content: "\2014  ";
+    }
+  }
+}
+
+.history > p {
+  max-width: 32rem;
+  margin-bottom: var(--space-l);
+}
+
+.history-list {
+  display: grid;
+  gap: var(--space-m);
+  counter-reset: moment;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li {
+    padding: var(--space-m);
+    color: var(--ink);
+    font-size: 1rem;
+    counter-increment: moment;
+
+    &::before {
+      content: counter(moment, decimal-leading-zero);
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--chilli);
+    }
+  }
+
+  h3 {
+    margin-bottom: var(--space-xs);
+    font-size: 1.375rem;
+  }
+}
+
+.visit {
+  display: grid;
+  gap: var(--space-m);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+      "text map"
+      "button map";
+    align-content: center;
+    column-gap: var(--space-xl);
+
+    .visit-text { grid-area: text; align-self: end; }
+    iframe { grid-area: map; aspect-ratio: 4 / 3; }
+    .btn { grid-area: button; align-self: start; justify-self: start; }
+  }
+
+  h2 {
+    margin-bottom: var(--space-s);
+  }
+
+  iframe {
+    background: var(--card);
+  }
+}
+
+.venue {
+  font-size: 1rem;
 }
