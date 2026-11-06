@@ -41,6 +41,7 @@ A multi-page website that celebrates African food heritage through recipes, regi
 - **Mobile menu:** the menu button opens and closes the navigation and updates `aria-expanded`
 - **Featured dishes carousel:** previous, next and dot buttons with a live counter, and no autoplay
 - **Recipe filter:** region buttons show or hide recipe cards using `data-region` and a `.hidden` class, without reloading the page
+- **Ingredient scaler:** the servings − / + buttons on each recipe page recalculate every amount (from 1 to 20 servings) and show it as a kitchen fraction such as 1½
 - **Favourites:** the heart button saves recipes to `localStorage`, and favourites are restored when the page loads
 - **Contact form validation:** stops the default submit, checks that the message is longer than 20 characters, then hides the form and thanks the visitor by name
 - **Dark/light mode:** the moon/sun button in the nav switches themes, saves the choice in `localStorage`, and follows the device's own setting on the first visit
