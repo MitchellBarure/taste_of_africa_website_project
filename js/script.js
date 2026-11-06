@@ -1,5 +1,28 @@
 const FAVORITES_KEY = "favoriteRecipes";
+const THEME_KEY = "theme";
 
+// Light or dark theme: saved choice first, otherwise the device's own setting
+function setupThemeToggle() {
+  const button = document.querySelector(".theme-toggle");
+  if (!button) return;
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    button.setAttribute("aria-pressed", String(theme === "dark"));
+  }
+
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+  button.addEventListener("click", () => {
+    const newTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(newTheme);
+    localStorage.setItem(THEME_KEY, newTheme);
+  });
+}
+
+// Mobile menu: the CSS shows the links when aria-expanded is "true"
 function setupMenu() {
   const button = document.querySelector(".menu-button");
   if (!button) return;
@@ -10,6 +33,7 @@ function setupMenu() {
   });
 }
 
+// Featured dishes carousel on the home page (no autoplay)
 function setupCarousel() {
   const slides = document.querySelectorAll(".slide");
   if (!slides.length) return;
@@ -44,6 +68,7 @@ function setupCarousel() {
   });
 }
 
+// Recipe filter: shows only the cards whose data-region matches the pressed button
 function setupRecipeFilter() {
   const buttons = document.querySelectorAll("[data-filter]");
   const recipes = document.querySelectorAll("[data-region]");
@@ -64,6 +89,7 @@ function setupRecipeFilter() {
   });
 }
 
+// Saved favourites are stored as a list of recipe IDs in localStorage
 function loadFavorites() {
   try {
     return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
@@ -72,6 +98,7 @@ function loadFavorites() {
   }
 }
 
+// Favourite buttons: restore saved favourites on load and save each click
 function setupFavorites() {
   const buttons = document.querySelectorAll(".favorite-button");
   let favorites = loadFavorites();
@@ -93,6 +120,7 @@ function setupFavorites() {
   });
 }
 
+// Contact form: message must be over 20 characters, then thank the visitor by name
 function setupContactForm() {
   const form = document.querySelector("#contact-form");
   if (!form) return;
@@ -138,8 +166,28 @@ function setupContactForm() {
   });
 }
 
+// Footer newsletter: swap the email field for a thank-you message instead of reloading
+function setupNewsletter() {
+  const form = document.querySelector(".newsletter");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const thanks = document.createElement("p");
+    thanks.className = "newsletter-thanks";
+    thanks.setAttribute("role", "status");
+    thanks.textContent = "Thanks for signing up! New recipes are on their way to your inbox.";
+
+    form.querySelectorAll("label, input, button").forEach((field) => field.classList.add("hidden"));
+    form.append(thanks);
+  });
+}
+
+setupThemeToggle();
 setupMenu();
 setupCarousel();
 setupRecipeFilter();
 setupFavorites();
 setupContactForm();
+setupNewsletter();
