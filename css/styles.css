@@ -273,6 +273,26 @@ main > * {
   border-color: currentColor;
 }
 
+.theme-toggle,
+.carousel-controls button,
+.servings button {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--sunshine);
+    color: var(--ink);
+  }
+}
+
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -535,17 +555,7 @@ main > * {
 
 /* Moon shows in light mode, sun in dark mode */
 .theme-toggle {
-  display: grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
   margin-left: auto;
-  border: var(--border);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--text);
-  font-size: 1.25rem;
-  cursor: pointer;
 
   &::before {
     content: "\263E";
@@ -553,11 +563,6 @@ main > * {
 
   &[aria-pressed="true"]::before {
     content: "\2600";
-  }
-
-  &:hover {
-    background: var(--sunshine);
-    color: var(--ink);
   }
 
   @media (min-width: 768px) {
@@ -819,21 +824,6 @@ main > * {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-
-  button {
-    width: 3rem;
-    height: 3rem;
-    border: var(--border);
-    border-radius: 50%;
-    background: var(--surface);
-    color: var(--text);
-    font-size: 1.25rem;
-    cursor: pointer;
-
-    &:hover {
-      background: var(--sunshine);
-    }
-  }
 
   .carousel-next {
     background: var(--carrot);
@@ -1334,6 +1324,24 @@ main > * {
 .ingredients {
   h2 {
     font-size: 2rem;
+  }
+
+  .servings {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-m);
+
+    label {
+      margin-right: auto;
+    }
+  }
+
+  .servings-count {
+    min-width: 2ch;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
   }
 
   h3 {
