@@ -308,6 +308,9 @@ main > * {
 .ingredients,
 .nutrition,
 .history-list li,
+.technique-list li,
+.staple-grid li,
+.dish-card,
 .contact-form {
   border: var(--border);
   border-radius: var(--radius-card);
@@ -316,17 +319,69 @@ main > * {
 
 .slide,
 .trend-card,
-.recipe-card {
+.recipe-card,
+.staple-grid li,
+.dish-card {
   overflow: hidden;
+}
+
+.slide,
+.trend-card,
+.recipe-card,
+.dish-card {
   box-shadow: var(--shadow);
 }
 
 .trend-card img,
-.recipe-card img {
+.recipe-card img,
+.staple-grid img {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-bottom: var(--border);
+}
+
+.trend-card,
+.staple-grid li {
+  --card-pad: var(--space-m);
+  padding-bottom: var(--card-pad);
+
+  img {
+    margin-bottom: var(--space-s);
+  }
+
+  > :not(img) {
+    margin-inline: var(--card-pad);
+  }
+}
+
+.history-list,
+.technique-list {
+  display: grid;
+  gap: var(--space-m);
+  counter-reset: step;
+
+  li {
+    padding: var(--space-m);
+    color: var(--ink);
+    font-size: 1rem;
+    counter-increment: step;
+
+    &::before {
+      content: counter(step, decimal-leading-zero);
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--chilli);
+    }
+  }
+
+  h3 {
+    margin-bottom: var(--space-xs);
+    font-size: 1.375rem;
+  }
 }
 
 /* ========== Top bands ========== */
@@ -334,13 +389,15 @@ main > * {
 .hero,
 .page-band,
 .recipe-hero,
-.about-hero {
+.about-hero,
+.region-hero {
   padding-top: var(--header-space);
 }
 
 .hero,
 .page-band,
-.recipe-hero {
+.recipe-hero,
+.region-hero {
   --focus-color: var(--sunshine);
   --mark-color: var(--sunshine);
 
@@ -951,16 +1008,10 @@ main > * {
 
 .trend-card {
   --focus-color: var(--ink);
-  padding-bottom: var(--space-m);
   color: var(--ink);
 
   img {
     object-position: center 15%;
-    margin-bottom: var(--space-s);
-  }
-
-  > :not(img) {
-    margin-inline: var(--space-m);
   }
 
   h3 {
@@ -1393,38 +1444,12 @@ main > * {
 }
 
 .history-list {
-  display: grid;
-  gap: var(--space-m);
-  counter-reset: moment;
-
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  li {
-    padding: var(--space-m);
-    color: var(--ink);
-    font-size: 1rem;
-    counter-increment: moment;
-
-    &::before {
-      content: counter(moment, decimal-leading-zero);
-      display: block;
-      margin-bottom: var(--space-xs);
-      font-family: var(--font-heading);
-      font-size: 2.25rem;
-      line-height: 1;
-      color: var(--chilli);
-    }
-  }
-
-  h3 {
-    margin-bottom: var(--space-xs);
-    font-size: 1.375rem;
   }
 }
 
@@ -1525,5 +1550,193 @@ main > * {
     margin-top: var(--space-m);
     border: var(--border);
     border-radius: var(--radius-image);
+  }
+}
+
+/* ========== Region pages ========== */
+
+.region-hero {
+  background: var(--forest);
+  color: var(--cream);
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--space-xl);
+
+    nav { grid-column: 1 / -1; }
+    h1 { grid-row: 2 / span 2; }
+    p { align-self: end; }
+    .countries { align-self: start; }
+  }
+
+  h1 {
+    margin-block: var(--space-m);
+  }
+
+  p {
+    max-width: 32rem;
+    font-size: 1.25rem;
+  }
+
+  .countries {
+    margin-top: var(--space-s);
+    font-size: 0.875rem;
+  }
+}
+
+.region-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+
+  a {
+    display: inline-block;
+    padding: 0.75rem var(--space-m);
+    border: 2px solid var(--cream);
+    border-radius: var(--radius-pill);
+    color: var(--cream);
+    font-size: 1rem;
+    line-height: 1.25;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    &[aria-current="page"] {
+      border-color: var(--ink);
+      background: var(--sunshine);
+      color: var(--ink);
+    }
+  }
+}
+
+.food-culture {
+  display: grid;
+  gap: var(--space-m);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    column-gap: var(--space-xl);
+
+    img { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  }
+
+  h2 {
+    margin: 0;
+    align-self: end;
+  }
+
+  p {
+    max-width: 36rem;
+    line-height: 1.75;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: var(--border);
+    border-radius: var(--radius-image);
+  }
+}
+
+.staple-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-s);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-m);
+  }
+
+  li {
+    --card-pad: var(--space-s);
+  }
+
+  h3 {
+    margin-bottom: var(--space-xs);
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+}
+
+.technique-list {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  li {
+    background: var(--sunshine);
+
+    &::before {
+      color: var(--ink);
+    }
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  mark {
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    background: var(--ink);
+    color: var(--sunshine);
+  }
+}
+
+.region-video > * {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.dish-list {
+  display: grid;
+  gap: var(--space-m);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dish-card {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: center;
+  column-gap: var(--space-m);
+  height: 100%;
+  padding: var(--space-s);
+
+  @media (min-width: 768px) {
+    grid-template-columns: 8rem 1fr;
+  }
+
+  img {
+    grid-row: 1 / span 3;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-image);
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.875rem;
   }
 }
