@@ -144,15 +144,53 @@ mark {
   outline-offset: 3px;
 }
 
-/* Text fields show focus on click too, so they get a softer glow instead of the outline */
 input,
 select,
 textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem var(--space-s);
+  border: var(--border);
+  border-radius: 0.75rem;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: color-mix(in srgb, var(--ink) 55%, transparent);
+  }
+
+  /* Text fields show focus on click too, so they get a softer glow instead of the outline */
   &:focus-visible {
     outline: none;
     border-color: var(--carrot);
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--carrot) 40%, transparent);
   }
+
+  &:user-invalid {
+    border-color: var(--tomato);
+  }
+}
+
+textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--ink) 50%) calc(100% - 1.25rem) 50% / 0.4rem 0.4rem no-repeat,
+    linear-gradient(135deg, var(--ink) 50%, transparent 50%) calc(100% - 0.85rem) 50% / 0.4rem 0.4rem no-repeat,
+    var(--white);
+  cursor: pointer;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 main > * {
@@ -269,7 +307,8 @@ main > * {
 .recipe-card,
 .ingredients,
 .nutrition,
-.history-list li {
+.history-list li,
+.contact-form {
   border: var(--border);
   border-radius: var(--radius-card);
   background: var(--card);
@@ -551,18 +590,8 @@ main > * {
     color: var(--ink);
   }
 
-  label {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
   input {
-    min-height: 3rem;
-    padding: 0 var(--space-s);
-    border: var(--border);
     border-radius: var(--radius-pill);
-    background: var(--card);
-    font: inherit;
   }
 
   button {
@@ -1427,4 +1456,74 @@ main > * {
 
 .venue {
   font-size: 1rem;
+}
+
+/* ========== Contact: form and other ways to reach us ========== */
+
+.contact-layout {
+  display: grid;
+  gap: var(--space-xl);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+
+    .other-contact { grid-column: 1; grid-row: 1; }
+    .contact-form { grid-column: 2; }
+  }
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-m);
+  padding: var(--space-m);
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--space-l);
+
+    > p,
+    .field:has(textarea),
+    button {
+      grid-column: 1 / -1;
+    }
+  }
+
+  > p {
+    font-size: 0.875rem;
+  }
+
+  button {
+    font-family: var(--font-body);
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      justify-self: start;
+    }
+  }
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: var(--space-xs);
+}
+
+.hint {
+  font-size: 0.875rem;
+}
+
+.other-contact {
+  h2 {
+    margin-bottom: var(--space-m);
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-top: var(--space-m);
+    border: var(--border);
+    border-radius: var(--radius-image);
+  }
 }
