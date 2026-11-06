@@ -11,6 +11,15 @@
   --ink: #1e1a16;
   --white: #ffffff;
 
+  /* Colour roles that the dark theme swaps */
+  --bg: var(--cream);
+  --surface: var(--card);
+  --text: var(--ink);
+  --line: var(--ink);
+  --accent: var(--chilli);
+  --field: var(--white);
+  --shadow-color: var(--ink);
+
   --font-heading: "Bagel Fat One", system-ui, sans-serif;
   --font-body: "Poppins", system-ui, sans-serif;
 
@@ -24,13 +33,24 @@
   --inline-pad: max(var(--space-s), (100% - var(--page-width)) / 2);
   --header-space: 7rem;
 
-  --border: 3px solid var(--ink);
+  --border: 3px solid var(--line);
   --radius-card: 1.5rem;
   --radius-image: 1.25rem;
   --radius-pill: 999px;
-  --shadow: 6px 6px 0 var(--ink);
+  --shadow: 6px 6px 0 var(--shadow-color);
 
-  --focus-color: var(--ink);
+  --focus-color: var(--text);
+}
+
+:root[data-theme="dark"] {
+  --bg: #17130f;
+  --surface: #241e18;
+  --text: var(--cream);
+  --line: var(--cream);
+  --accent: #ff8a70;
+  --field: #17130f;
+  --shadow-color: #000000;
+  color-scheme: dark;
 }
 
 @media (min-width: 768px) {
@@ -55,8 +75,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: 1.125rem;
   line-height: 1.6;
@@ -69,7 +89,7 @@ h3 {
   font-family: var(--font-heading);
   font-weight: 400;
   line-height: 1.05;
-  color: var(--chilli);
+  color: var(--accent);
 }
 
 h1 {
@@ -93,7 +113,7 @@ p {
 }
 
 a {
-  color: var(--chilli);
+  color: var(--accent);
   font-weight: 600;
   text-underline-offset: 0.2em;
 
@@ -135,7 +155,7 @@ li::marker {
 
 mark {
   background: none;
-  color: var(--mark-color, var(--chilli));
+  color: var(--mark-color, var(--accent));
   font-weight: 700;
 }
 
@@ -152,13 +172,13 @@ textarea {
   padding: 0.75rem var(--space-s);
   border: var(--border);
   border-radius: 0.75rem;
-  background: var(--white);
-  color: var(--ink);
+  background: var(--field);
+  color: var(--text);
   font: inherit;
   font-size: 1rem;
 
   &::placeholder {
-    color: color-mix(in srgb, var(--ink) 55%, transparent);
+    color: color-mix(in srgb, var(--text) 55%, transparent);
   }
 
   /* Text fields show focus on click too, so they get a softer glow instead of the outline */
@@ -182,9 +202,9 @@ select {
   appearance: none;
   padding-right: 2.5rem;
   background:
-    linear-gradient(45deg, transparent 50%, var(--ink) 50%) calc(100% - 1.25rem) 50% / 0.4rem 0.4rem no-repeat,
-    linear-gradient(135deg, var(--ink) 50%, transparent 50%) calc(100% - 0.85rem) 50% / 0.4rem 0.4rem no-repeat,
-    var(--white);
+    linear-gradient(45deg, transparent 50%, var(--text) 50%) calc(100% - 1.25rem) 50% / 0.4rem 0.4rem no-repeat,
+    linear-gradient(135deg, var(--text) 50%, transparent 50%) calc(100% - 0.85rem) 50% / 0.4rem 0.4rem no-repeat,
+    var(--field);
   cursor: pointer;
 }
 
@@ -219,7 +239,7 @@ main > * {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--chilli);
+  color: var(--accent);
 }
 
 .btn {
@@ -277,6 +297,7 @@ main > * {
   color: var(--cream);
 }
 
+/* Red and yellow checks drawn with a gradient, so no image is needed */
 .checker-strip {
   position: absolute;
   inset: auto 0 0;
@@ -284,6 +305,7 @@ main > * {
   background: repeating-conic-gradient(var(--strip-color, var(--tomato)) 0 25%, var(--sunshine) 0 50%) 0 0 / 1rem 1rem;
 }
 
+/* Hides "Africa" in button labels on phones while screen readers still hear it */
 .long-label {
   position: absolute;
   width: 1px;
@@ -315,7 +337,7 @@ main > * {
 .contact-form {
   border: var(--border);
   border-radius: var(--radius-card);
-  background: var(--card);
+  background: var(--surface);
 }
 
 .slide,
@@ -356,6 +378,7 @@ main > * {
   }
 }
 
+/* Numbered cards: the 01, 02, 03 labels come from a CSS counter */
 .history-list,
 .technique-list {
   display: grid;
@@ -364,7 +387,7 @@ main > * {
 
   li {
     padding: var(--space-m);
-    color: var(--ink);
+    color: var(--text);
     font-size: 1rem;
     counter-increment: step;
 
@@ -375,7 +398,7 @@ main > * {
       font-family: var(--font-heading);
       font-size: 2.25rem;
       line-height: 1;
-      color: var(--chilli);
+      color: var(--accent);
     }
   }
 
@@ -416,6 +439,11 @@ main > * {
 
 .about-hero {
   background: var(--sunshine);
+  color: var(--ink);
+
+  h1 {
+    color: var(--chilli);
+  }
 }
 
 .page-band,
@@ -462,14 +490,16 @@ main > * {
 }
 
 .nav {
+  --focus-color: var(--text);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-xs);
   padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-s);
   border: var(--border);
   border-radius: var(--radius-card);
-  background: var(--cream);
+  background: var(--bg);
 
   @media (min-width: 768px) {
     border-radius: var(--radius-pill);
@@ -480,7 +510,7 @@ main > * {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  color: var(--chilli);
+  color: var(--accent);
   font-weight: 700;
   text-decoration: none;
 }
@@ -503,6 +533,39 @@ main > * {
   }
 }
 
+/* Moon shows in light mode, sun in dark mode */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-left: auto;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  &::before {
+    content: "\263E";
+  }
+
+  &[aria-pressed="true"]::before {
+    content: "\2600";
+  }
+
+  &:hover {
+    background: var(--sunshine);
+    color: var(--ink);
+  }
+
+  @media (min-width: 768px) {
+    order: 1;
+    margin-left: var(--space-s);
+  }
+}
+
 .nav-links {
   display: none;
   flex-basis: 100%;
@@ -518,20 +581,21 @@ main > * {
     flex-basis: auto;
     flex-direction: row;
     gap: var(--space-s);
+    margin-left: auto;
     padding: 0;
   }
 
   a {
     display: block;
     padding: 0.75rem var(--space-xs);
-    color: var(--ink);
+    color: var(--text);
     font-size: 1rem;
     text-decoration: none;
     text-decoration-thickness: 3px;
     text-underline-offset: 0.4em;
 
     &:hover {
-      color: var(--chilli);
+      color: var(--accent);
       text-decoration-line: underline;
     }
 
@@ -668,6 +732,15 @@ main > * {
   }
 }
 
+.newsletter-thanks {
+  font-weight: 700;
+
+  @media (min-width: 1024px) {
+    grid-column: 2 / -1;
+    grid-row: 1 / span 2;
+  }
+}
+
 .copyright {
   grid-column: 1 / -1;
   padding-top: var(--space-m);
@@ -752,7 +825,8 @@ main > * {
     height: 3rem;
     border: var(--border);
     border-radius: 50%;
-    background: var(--card);
+    background: var(--surface);
+    color: var(--text);
     font-size: 1.25rem;
     cursor: pointer;
 
@@ -763,6 +837,7 @@ main > * {
 
   .carousel-next {
     background: var(--carrot);
+    color: var(--ink);
   }
 }
 
@@ -770,7 +845,7 @@ main > * {
   margin: 0 var(--space-xs) 0 0;
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  color: var(--chilli);
+  color: var(--accent);
 }
 
 .slide {
@@ -831,7 +906,7 @@ main > * {
       content: "";
       width: 1rem;
       height: 1rem;
-      border: 2px solid var(--ink);
+      border: 2px solid var(--line);
       border-radius: var(--radius-pill);
       transition: width 0.2s;
     }
@@ -850,7 +925,7 @@ main > * {
   flex-direction: column;
   gap: var(--space-s);
   border-block: var(--border);
-  background: var(--card);
+  background: var(--surface);
 
   @media (min-width: 1024px) {
     display: grid;
@@ -874,6 +949,7 @@ main > * {
   }
 }
 
+/* Lets the map sit between the intro and the region cards on phones */
 .regions-text {
   display: contents;
 }
@@ -885,7 +961,7 @@ main > * {
   margin-inline: auto;
 
   path {
-    stroke: var(--ink);
+    stroke: var(--line);
     stroke-width: 4;
     stroke-linejoin: round;
     transition: fill 0.2s;
@@ -1009,8 +1085,8 @@ main > * {
 }
 
 .trend-card {
-  --focus-color: var(--ink);
-  color: var(--ink);
+  --focus-color: var(--text);
+  color: var(--text);
 
   img {
     object-position: center 15%;
@@ -1036,7 +1112,7 @@ main > * {
 
   span {
     font-weight: 700;
-    color: var(--chilli);
+    color: var(--accent);
   }
 }
 
@@ -1067,12 +1143,13 @@ main > * {
     border: var(--border);
     border-radius: var(--radius-pill);
     background: transparent;
-    color: var(--ink);
+    color: var(--text);
     font: 600 1rem var(--font-body);
     cursor: pointer;
 
     &:hover {
       background: var(--sunshine);
+      color: var(--ink);
     }
 
     &[aria-pressed="true"] {
@@ -1136,16 +1213,17 @@ main > * {
 .favorite-button {
   min-height: 3rem;
   padding: 0 var(--space-s);
-  border: 2px solid var(--ink);
+  border: 2px solid var(--line);
   border-radius: var(--radius-pill);
-  background: var(--card);
-  color: var(--ink);
+  background: var(--surface);
+  color: var(--text);
   font: 600 0.875rem var(--font-body);
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
 
   &:hover {
     background: var(--sunshine);
+    color: var(--ink);
   }
 
   &[aria-pressed="true"] {
@@ -1277,7 +1355,7 @@ main > * {
   margin-bottom: var(--space-s);
   border: var(--border);
   border-radius: var(--radius-card);
-  background: var(--card);
+  background: var(--surface);
 
   &[open] summary::after {
     content: "\2212";
@@ -1320,6 +1398,7 @@ main > * {
   border: 2px solid var(--ink);
   border-radius: 50%;
   background: var(--sunshine);
+  color: var(--ink);
 }
 
 .nutrition table {
@@ -1333,13 +1412,13 @@ main > * {
   font-size: 1.75rem;
   line-height: 1.1;
   text-align: left;
-  color: var(--chilli);
+  color: var(--accent);
 }
 
 .nutrition th,
 .nutrition td {
   padding: var(--space-xs) 0;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
   text-align: left;
 }
 
@@ -1356,6 +1435,11 @@ main > * {
   text-align: right;
 }
 
+.nutrition-note {
+  margin-top: var(--space-s);
+  font-size: 0.75rem;
+}
+
 /* ========== Recipe page: more from this region ========== */
 
 .more-from-region {
@@ -1363,7 +1447,7 @@ main > * {
   flex-direction: column;
   gap: var(--space-m);
   border-top: var(--border);
-  background: var(--card);
+  background: var(--surface);
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -1432,7 +1516,7 @@ main > * {
   figcaption {
     margin-top: var(--space-xs);
     font-weight: 700;
-    color: var(--chilli);
+    color: var(--accent);
 
     &::before {
       content: "\2014  ";
@@ -1477,7 +1561,7 @@ main > * {
   }
 
   iframe {
-    background: var(--card);
+    background: var(--surface);
   }
 }
 
@@ -1543,7 +1627,7 @@ main > * {
 .form-error {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--chilli);
+  color: var(--accent);
 }
 
 .form-success {
@@ -1551,6 +1635,7 @@ main > * {
   border: var(--border);
   border-radius: var(--radius-card);
   background: var(--sunshine);
+  color: var(--ink);
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
   line-height: 1.2;
@@ -1698,6 +1783,7 @@ main > * {
 
   li {
     background: var(--sunshine);
+    color: var(--ink);
 
     &::before {
       color: var(--ink);
@@ -1750,7 +1836,7 @@ main > * {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--line);
     border-radius: var(--radius-image);
   }
 
