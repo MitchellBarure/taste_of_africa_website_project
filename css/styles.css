@@ -198,8 +198,9 @@ main > * {
   padding: var(--space-xl) var(--inline-pad);
 }
 
+/* Utility class, so it must win over any component's display value */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -677,10 +678,11 @@ main > * {
 /* ========== Home: hero ========== */
 
 .hero {
+  --overlay: color-mix(in srgb, var(--ink) 70%, transparent);
   display: grid;
   gap: var(--space-l);
   background:
-    linear-gradient(color-mix(in srgb, var(--ink) 70%, transparent) 0 0),
+    linear-gradient(var(--overlay), var(--overlay)),
     url("../images/hero.jpg") center / cover,
     var(--ink);
   color: var(--cream);
@@ -1536,6 +1538,26 @@ main > * {
 
 .hint {
   font-size: 0.875rem;
+}
+
+.form-error {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--chilli);
+}
+
+.form-success {
+  padding: var(--space-l);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--sunshine);
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  line-height: 1.2;
+
+  @media (min-width: 1024px) {
+    grid-column: 2;
+  }
 }
 
 .other-contact {
